@@ -246,6 +246,10 @@ def main():
     words['a'] = True
     words['i'] = True
 
+    numbers = ["ones", "twos", "threes", "fours", "fives", "sixs", "sevens", "eights", "nines"]
+    for num in numbers:
+        words[num] = False
+
     #decryption for columnar
     decryptColumnar("IPLIOZVZEA", 0)
     print(message)
