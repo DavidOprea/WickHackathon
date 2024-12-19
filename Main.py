@@ -355,13 +355,16 @@ def main():
     def getPath():
         coors = coors_text_box.get("1.0", "end-1c").strip("\n")
         coors = ""
-        for i in range(9):
-            for j in range(9):
+        for i in range(10):
+            for j in range(10):
                 if grid_buttons[i][j]['bg'] == 'blue':
                     coors += num2words(i)
                     coors += num2words(j)
         ans = solveMaze(10, 10, (0,0), (9,9), coors)
-        ans_label.config(text = "Path: " + ans + " Length: " + str(len(ans)))
+        lenAns = len(ans)
+        if lenAns == 82:
+            lenAns = None
+        ans_label.config(text = "Path: " + ans + " Length: " + str(lenAns))
 
 
     path_button = tk.Button(root, text="Get Shortest Path", command=getPath)
