@@ -256,6 +256,8 @@ def main():
 
     # Function to toggle the color of the button when clicked
     def toggle_color(row, col):
+        if row == 0 and col == 0 or row == 9 and col == 9:
+            return
         # Get the current color of the button
         current_color = grid_buttons[row][col]['bg']
 
