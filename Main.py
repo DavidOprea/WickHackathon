@@ -347,14 +347,19 @@ def main():
     encrypt_button.grid(row=5, column=0, columnspan=20, pady=5)
 
     coors_text_box = tk.Text(root, height=4, width=40, wrap="word", bg="lightgray")
-    coors_text_box.grid(row=6, column=0, columnspan=20, pady=5)
+    #coors_text_box.grid(row=6, column=0, columnspan=20, pady=5)
 
     # Initialize a 2D list to store button references for the grid
     grid_buttons = []
 
     def getPath():
         coors = coors_text_box.get("1.0", "end-1c").strip("\n")
-        print(coors)
+        coors = ""
+        for i in range(9):
+            for j in range(9):
+                if grid_buttons[i][j]['bg'] == 'blue':
+                    coors += num2words(i)
+                    coors += num2words(j)
         ans = solveMaze(10, 10, (0,0), (9,9), coors)
         ans_label.config(text = "Path: " + ans + " Length: " + str(len(ans)))
 
