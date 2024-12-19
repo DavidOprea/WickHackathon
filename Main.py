@@ -360,9 +360,9 @@ def main():
     ans_label.grid(row=8, column=0, columnspan=20, pady=5)
 
     # Create a 20x20 grid of buttons
-    for row in range(11):
+    for row in range(10):
         grid_buttons.append([])  # Add a new row to the list
-        for col in range(11):
+        for col in range(10):
             # Create a button for each square in the grid
             button = tk.Button(root, width=1, height=1, bg='white',
                                highlightbackground='white',  # Set initial highlight color
